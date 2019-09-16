@@ -5,7 +5,11 @@
   "license": "MIT",
   "scripts": {
     "start": "node index.ts",
-    "watch": "nodemon index.ts"
+    "watch": "nodemon index.ts",
+    "build:ui": "rm -rf build && cd ../part2 && yarn run build --prod && cp -r build ../part3",
+    "deploy": "git push heroku master",
+    "deploy:full": "yarn run build:ui && git add . && git commit -m uibuild && git push && yarn run deploy",
+    "logs:prod": "heroku logs --tail"
   },
   "dependencies": {
     "@types/express": "^4.17.1",
