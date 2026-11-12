@@ -5,7 +5,6 @@ const app = express()
 const cors = require('cors')
 const notesRouter = require('./controllers/notes')
 const middleware = require('./utils/middleware')
-import * as mongoose from 'mongoose'
 import * as logger from './utils/logger'
 const usersRouter = require('./controllers/users')
 const loginRouter = require('./controllers/login')
